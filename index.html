@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://rsms.me/" crossorigin />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>Alent.Red</title>
+    <script>
+      (function () {
+        var STORAGE_KEY = 'alent-red:theme-mode';
+        var stored = null;
+        try {
+          stored = localStorage.getItem(STORAGE_KEY);
+        } catch (_) {}
+        var mode =
+          stored === 'LIGHT' || stored === 'DARK' || stored === 'SYSTEM' ? stored : 'SYSTEM';
+        var resolved =
+          mode === 'SYSTEM'
+            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+            : mode === 'DARK'
+              ? 'dark'
+              : 'light';
+        document.documentElement.dataset.theme = resolved;
+        document.documentElement.style.background = resolved === 'dark' ? '#0b0d12' : '#fafafa';
+        document.documentElement.style.colorScheme = resolved;
+      })();
+    </script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+      }
+      body {
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/windows/main-window/index.tsx"></script>
+  </body>
+</html>

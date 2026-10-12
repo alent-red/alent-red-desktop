@@ -1,0 +1,62 @@
+[package]
+name = "alent-red-desktop"
+version = "0.0.0"
+description = "Alent.Red Desktop"
+authors = ["Alent.Red"]
+edition = "2021"
+license = "Proprietary"
+readme = "../README.md"
+keywords = ["tauri", "desktop", "ai", "agents"]
+categories = ["gui"]
+publish = false
+
+[lib]
+name = "alent_red_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+tonic-build = "0.12"
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-window-state = "2"
+tauri-plugin-updater = "2"
+tauri-plugin-process = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+tokio-stream = "0.1"
+tonic = { version = "0.12", features = ["transport"] }
+prost = "0.13"
+prost-types = "0.13"
+futures-util = "0.3"
+uuid = { version = "1", features = ["v4", "serde"] }
+once_cell = "1"
+base64 = "0.22"
+keyring = { version = "3", features = ["apple-native", "windows-native", "linux-native"] }
+rand = "0.8"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+tauri-plugin-macos-permissions = "2.3"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+tauri-plugin-frame = "1.1"
+
+[lints.rust]
+unsafe_code = "forbid"
+unused_must_use = "deny"
+missing_debug_implementations = "warn"
+
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+cargo = { level = "deny", priority = -1 }
+multiple_crate_versions = "allow"
+
+[profile.release]
+strip = "symbols"
+debug = false

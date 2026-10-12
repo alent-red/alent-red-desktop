@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "platforms": {
+    "macos-arm64": {
+      "sha256": "4de5fbc87adc63e35d303643474492c297e98d93b8704e1d2a0e5ccfc1a1c218"
+    },
+    "windows-x86_64": {
+      "sha256": "dd2cde572b6a9926071b847c10f0526cdb9b5aa14b47e4273386da41bb39b349"
+    }
+  }
+}

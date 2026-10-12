@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>NSScreenCaptureUsageDescription</key>
+  <string>Alent.Red captures the screen so its AI agents can read what is on display and act on it.</string>
+  <key>NSAppleEventsUsageDescription</key>
+  <string>Alent.Red sends events to other apps so its AI agents can drive them on your behalf.</string>
+  <key>NSAccessibilityUsageDescription</key>
+  <string>Alent.Red uses Accessibility to move the mouse, send keystrokes, and interact with other applications on your behalf.</string>
+</dict>
+</plist>
