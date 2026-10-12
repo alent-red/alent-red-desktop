@@ -1,0 +1,22 @@
+export const PreferenceKey = {
+  SystemPrompt: 'SYSTEM_PROMPT',
+  AgentPromptPlaceholder: 'AGENT_PROMPT_PLACEHOLDER',
+  BrickPromptPlaceholder: 'BRICK_PROMPT_PLACEHOLDER',
+  AttachedFilePathPromptPrefix: 'ATTACHED_FILE_PATH_PROMPT_PREFIX',
+  BrickPromptSeparator: 'BRICK_PROMPT_SEPARATOR',
+  BrickToolNameSeparator: 'BRICK_TOOL_NAME_SEPARATOR',
+  AttachedFilePathPromptSeparator: 'ATTACHED_FILE_PATH_PROMPT_SEPARATOR',
+  NoToolResponsePrompt: 'NO_TOOL_RESPONSE_PROMPT',
+  OpenAiBaseUrl: 'OPEN_AI_BASE_URL',
+  AnthropicBaseUrl: 'ANTHROPIC_BASE_URL',
+  AnthropicReasoningMinimalBudgetTokens: 'ANTHROPIC_REASONING_MINIMAL_BUDGET_TOKENS',
+  AnthropicReasoningLowBudgetTokens: 'ANTHROPIC_REASONING_LOW_BUDGET_TOKENS',
+  AnthropicReasoningMediumBudgetTokens: 'ANTHROPIC_REASONING_MEDIUM_BUDGET_TOKENS',
+  AnthropicReasoningHighBudgetTokens: 'ANTHROPIC_REASONING_HIGH_BUDGET_TOKENS',
+  AnthropicReasoningXhighBudgetTokens: 'ANTHROPIC_REASONING_XHIGH_BUDGET_TOKENS',
+  AnthropicCacheMediumTtl: 'ANTHROPIC_CACHE_MEDIUM_TTL',
+  AnthropicCacheHighTtl: 'ANTHROPIC_CACHE_HIGH_TTL',
+  LlmStream: 'LLM_STREAM',
+  Unspecified: 'UNSPECIFIED',
+} as const;
+export type PreferenceKey = (typeof PreferenceKey)[keyof typeof PreferenceKey];

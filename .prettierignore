@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+src-tauri/target
+src-tauri/src/grpc/generated
+src-tauri/gen
+src-tauri/icons
+tmp
+package-lock.json
+*.lock
